@@ -24,3 +24,18 @@ int main() {
     std::cin >> estudianteOriginal.edad;
     std::cout << "Ingrese el promedio del estudiante: ";
     std::cin >> estudianteOriginal.promedio;
+
+    // Copiar la estructura Estudiante
+    Estudiante estudianteCopia = copiarEstudiante(estudianteOriginal);
+
+    // Mostrar la información original y copiada
+    std::cout << "\nInformacion del estudiante original:\n";
+    std::cout << "Nombre: " << estudianteOriginal.nombre << "\nEdad: " << estudianteOriginal.edad
+              << "\nPromedio: " << estudianteOriginal.promedio << std::endl;
+
+    std::cout << "\nInformacion del estudiante copiado:\n";
+    std::cout << "Nombre: " << estudianteCopia.nombre << "\nEdad: " << estudianteCopia.edad
+              << "\nPromedio: " << estudianteCopia.promedio << std::endl;
+
+    return 0;
+}
