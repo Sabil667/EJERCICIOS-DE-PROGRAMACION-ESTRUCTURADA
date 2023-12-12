@@ -13,7 +13,7 @@ int main() {
     Dato miDato;
 
     // Asignar un entero
-    miDato.entero = 42;
+    miDato.entero = 25;
     std::cout << "Valor entero: " << miDato.entero << std::endl;
 
     // Asignar un flotante
