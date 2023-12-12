@@ -73,3 +73,21 @@ int main() {
     imprimirEstudiantePorDireccion(&estudianteC);
 
     std::cout << "\n";
+
+    // d. De la programación funcional a la programación orientada a objetos
+    // Crear una lista de estudiantes usando objetos
+    std::vector<EstudianteObjeto> listaEstudiantesObjeto;
+
+    // Agregar estudiantes a la lista
+    listaEstudiantesObjeto.emplace_back("Laura", 19, 8.8);
+    listaEstudiantesObjeto.emplace_back("Pedro", 20, 7.5);
+    listaEstudiantesObjeto.emplace_back("Isabel", 21, 9.2);
+
+    // Imprimir información de cada estudiante usando métodos
+    for (const EstudianteObjeto& estudianteObjeto : listaEstudiantesObjeto) {
+        estudianteObjeto.imprimirInformacion();
+        std::cout << std::endl;
+    }
+
+    return 0;
+}
