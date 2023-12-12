@@ -1,14 +1,18 @@
 #include <iostream>
 #include <cstring>
 
+// Definición de la estructura Estudiante
 struct Estudiante {
     char nombre[50];
     int edad;
     float promedio;
 };
 
-Estudiante copiarEstudiante(const Estudiante& est) {
-    Estudiante nuevoEst;
+// Crear un alias para la estructura Estudiante usando typedef
+typedef Estudiante MiEstudiante;
+
+MiEstudiante copiarEstudiante(const MiEstudiante& est) {
+    MiEstudiante nuevoEst;
     strcpy(nuevoEst.nombre, est.nombre);
     nuevoEst.edad = est.edad;
     nuevoEst.promedio = est.promedio;
@@ -16,8 +20,8 @@ Estudiante copiarEstudiante(const Estudiante& est) {
 }
 
 int main() {
-    // Crear una estructura Estudiante
-    Estudiante estudianteOriginal;
+    // Crear una instancia de la estructura Estudiante
+    MiEstudiante estudianteOriginal;
     std::cout << "Ingrese el nombre del estudiante: ";
     std::cin.getline(estudianteOriginal.nombre, 50);
     std::cout << "Ingrese la edad del estudiante: ";
@@ -26,7 +30,7 @@ int main() {
     std::cin >> estudianteOriginal.promedio;
 
     // Copiar la estructura Estudiante
-    Estudiante estudianteCopia = copiarEstudiante(estudianteOriginal);
+    MiEstudiante estudianteCopia = copiarEstudiante(estudianteOriginal);
 
     // Mostrar la información original y copiada
     std::cout << "\nInformacion del estudiante original:\n";
