@@ -38,3 +38,38 @@ public:
     void imprimirInformacion() const {
         std::cout << "Nombre: " << nombre << "\nEdad: " << edad << "\nPromedio: " << promedio << std::endl;
     }
+
+
+private:
+    char nombre[50];
+    int edad;
+    float promedio;
+};
+
+int main() {
+    // a. Pasar una estructura por valor como argumento
+    Estudiante estudianteA;
+    strcpy(estudianteA.nombre, "Juan");
+    estudianteA.edad = 20;
+    estudianteA.promedio = 8.5;
+    imprimirEstudiantePorValor(estudianteA);
+
+    std::cout << "\n";
+
+    // b. Pasar una estructura por referencia como argumento
+    Estudiante estudianteB;
+    strcpy(estudianteB.nombre, "Ana");
+    estudianteB.edad = 22;
+    estudianteB.promedio = 9.0;
+    imprimirEstudiantePorReferencia(estudianteB);
+
+    std::cout << "\n";
+
+    // c. Pasar una estructura por dirección como argumento
+    Estudiante estudianteC;
+    strcpy(estudianteC.nombre, "Carlos");
+    estudianteC.edad = 21;
+    estudianteC.promedio = 8.0;
+    imprimirEstudiantePorDireccion(&estudianteC);
+
+    std::cout << "\n";
