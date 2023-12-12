@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cstring>
 
+using namespace std;
+
 struct Estudiante {
     char nombre[50];
     int edad;
@@ -18,24 +20,24 @@ Estudiante copiarEstudiante(const Estudiante& est) {
 int main() {
     // Crear una estructura Estudiante
     Estudiante estudianteOriginal;
-    std::cout << "Ingrese el nombre del estudiante: ";
-    std::cin.getline(estudianteOriginal.nombre, 50);
-    std::cout << "Ingrese la edad del estudiante: ";
-    std::cin >> estudianteOriginal.edad;
-    std::cout << "Ingrese el promedio del estudiante: ";
-    std::cin >> estudianteOriginal.promedio;
+    cout << "Ingrese el nombre del estudiante: ";
+    cin.getline(estudianteOriginal.nombre, 50);
+    cout << "Ingrese la edad del estudiante: ";
+    cin >> estudianteOriginal.edad;
+    cout << "Ingrese el promedio del estudiante: ";
+    cin >> estudianteOriginal.promedio;
 
     // Copiar la estructura Estudiante
     Estudiante estudianteCopia = copiarEstudiante(estudianteOriginal);
 
     // Mostrar la información original y copiada
-    std::cout << "\nInformacion del estudiante original:\n";
-    std::cout << "Nombre: " << estudianteOriginal.nombre << "\nEdad: " << estudianteOriginal.edad
-              << "\nPromedio: " << estudianteOriginal.promedio << std::endl;
+    cout << "\nInformacion del estudiante original:\n";
+    cout << "Nombre: " << estudianteOriginal.nombre << "\nEdad: " << estudianteOriginal.edad
+         << "\nPromedio: " << estudianteOriginal.promedio << endl;
 
-    std::cout << "\nInformacion del estudiante copiado:\n";
-    std::cout << "Nombre: " << estudianteCopia.nombre << "\nEdad: " << estudianteCopia.edad
-              << "\nPromedio: " << estudianteCopia.promedio << std::endl;
+    cout << "\nInformacion del estudiante copiado:\n";
+    cout << "Nombre: " << estudianteCopia.nombre << "\nEdad: " << estudianteCopia.edad
+         << "\nPromedio: " << estudianteCopia.promedio << endl;
 
     return 0;
 }
