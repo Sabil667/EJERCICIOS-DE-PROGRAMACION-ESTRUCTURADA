@@ -94,4 +94,33 @@ void verEstudiantes(struct Estudiante lista[], int numEstudiantes) {
     }
 }
 
+// Función para eliminar un estudiante de la lista
+void eliminarEstudiante(struct Estudiante lista[], int *numEstudiantes) {
+    if (*numEstudiantes > 0) {
+        int indice;
+
+        // Mostrar la lista actual de estudiantes
+        verEstudiantes(lista, *numEstudiantes);
+
+        // Solicitar al usuario el índice del estudiante a eliminar
+        printf("Ingrese el número del estudiante que desea eliminar: ");
+        scanf("%d", &indice);
+
+        // Validar el índice ingresado
+        if (indice >= 1 && indice <= *numEstudiantes) {
+            // Desplazar los elementos a la izquierda para eliminar el estudiante
+            for (int i = indice - 1; i < *numEstudiantes - 1; i++) {
+                lista[i] = lista[i + 1];
+            }
+
+            (*numEstudiantes)--;
+            printf("Estudiante eliminado con éxito.\n");
+        } else {
+            printf("Índice no válido. Inténtelo de nuevo.\n");
+        }
+    } else {
+        printf("No hay estudiantes en la lista. No se puede eliminar.\n");
+    }
+}
+
 
