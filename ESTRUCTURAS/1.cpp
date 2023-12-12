@@ -78,3 +78,20 @@ void agregarEstudiante(struct Estudiante lista[], int *numEstudiantes) {
     }
 }
 
+// Función para ver la lista de estudiantes
+void verEstudiantes(struct Estudiante lista[], int numEstudiantes) {
+    if (numEstudiantes > 0) {
+        printf("\n--- Lista de Estudiantes ---\n");
+        for (int i = 0; i < numEstudiantes; i++) {
+            printf("Estudiante %d:\n", i + 1);
+            printf("Nombre: %s\n", lista[i].nombre);
+            printf("Edad: %d\n", lista[i].edad);
+            printf("Promedio: %.2f\n", lista[i].promedio);
+            printf("---------------------------\n");
+        }
+    } else {
+        printf("No hay estudiantes en la lista.\n");
+    }
+}
+
+
