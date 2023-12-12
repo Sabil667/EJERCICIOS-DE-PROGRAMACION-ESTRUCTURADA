@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cstring>
 
+using namespace std;
+
 // Definición de la unión Dato
 union Dato {
     int entero;
@@ -14,15 +16,15 @@ int main() {
 
     // Asignar un entero
     miDato.entero = 25;
-    std::cout << "Valor entero: " << miDato.entero << std::endl;
+    cout << "Valor entero: " << miDato.entero << endl;
 
     // Asignar un flotante
     miDato.flotante = 3.14f;
-    std::cout << "Valor flotante: " << miDato.flotante << std::endl;
+    cout << "Valor flotante: " << miDato.flotante << endl;
 
     // Asignar una cadena de caracteres
-    std::strcpy(miDato.cadena, "Hola, mundo!");
-    std::cout << "Valor cadena: " << miDato.cadena << std::endl;
+    strcpy(miDato.cadena, "Hola, mundo!");
+    cout << "Valor cadena: " << miDato.cadena << endl;
 
     return 0;
 }
