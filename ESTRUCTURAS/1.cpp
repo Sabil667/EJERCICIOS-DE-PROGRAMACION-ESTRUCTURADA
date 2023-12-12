@@ -55,3 +55,26 @@ int main() {
 
     return 0;
 }
+
+
+// Función para agregar un estudiante a la lista
+void agregarEstudiante(struct Estudiante lista[], int *numEstudiantes) {
+    if (*numEstudiantes < 50) {
+        struct Estudiante nuevoEstudiante;
+
+        printf("Ingrese el nombre del estudiante: ");
+        scanf("%s", nuevoEstudiante.nombre);
+        printf("Ingrese la edad del estudiante: ");
+        scanf("%d", &nuevoEstudiante.edad);
+        printf("Ingrese el promedio del estudiante: ");
+        scanf("%f", &nuevoEstudiante.promedio);
+
+        lista[*numEstudiantes] = nuevoEstudiante;
+        (*numEstudiantes)++;
+
+        printf("Estudiante agregado con éxito.\n");
+    } else {
+        printf("La lista de estudiantes está llena. No se pueden agregar mas estudiantes.\n");
+    }
+}
+
