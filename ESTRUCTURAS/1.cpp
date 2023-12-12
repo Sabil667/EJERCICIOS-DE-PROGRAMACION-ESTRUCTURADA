@@ -123,4 +123,31 @@ void eliminarEstudiante(struct Estudiante lista[], int *numEstudiantes) {
     }
 }
 
+// Función para buscar un estudiante por nombre
+void buscarEstudiante(struct Estudiante lista[], int numEstudiantes) {
+    if (numEstudiantes > 0) {
+        char nombreBuscado[50];
+        int encontrado = 0;
+
+        printf("Ingrese el nombre del estudiante que desea buscar: ");
+        scanf("%s", nombreBuscado);
+
+        for (int i = 0; i < numEstudiantes; i++) {
+            if (strcmp(lista[i].nombre, nombreBuscado) == 0) {
+                printf("Estudiante encontrado:\n");
+                printf("Nombre: %s\n", lista[i].nombre);
+                printf("Edad: %d\n", lista[i].edad);
+                printf("Promedio: %.2f\n", lista[i].promedio);
+                encontrado = 1;
+                break;  // Salir del bucle al encontrar el estudiante
+            }
+        }
+
+        if (!encontrado) {
+            printf("Estudiante no encontrado.\n");
+        }
+    } else {
+        printf("No hay estudiantes en la lista. No se puede buscar.\n");
+    }
+}
 
